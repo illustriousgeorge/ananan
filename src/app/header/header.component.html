@@ -1,0 +1,23 @@
+<nav class="header">
+
+  <ul>
+    <li>
+      <button (click)="toggleSidebar()"></button>
+    </li>
+    <li *ngFor="let item of menu | keyvalue">
+      <a routerLink="/{{item.key}}">{{item.value}}</a>
+    </li>
+
+    <li>
+      <form autocomplete="off">
+        <datalist id="components" >
+          <option *ngFor="let item of menu | keyvalue" value="{{item.value}}">
+        </datalist>
+      </form>
+    </li>
+  </ul>
+
+</nav>
+
+
+
